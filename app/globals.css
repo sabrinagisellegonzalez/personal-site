@@ -5,6 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+    --glow-project-card: 0 0 16px 2px color-mix(in srgb, var(--primary) 35%, transparent),
+                         0 0 40px 6px color-mix(in srgb, var(--secondary) 15%, transparent);
+    /* offset downward so the glow blooms from the bottom crescent border */
+    --glow-crescent: 0 8px 5px 4px color-mix(in srgb, var(--primary) 55%, transparent),
+                     0 14px 5px 6px color-mix(in srgb, var(--secondary) 25%, transparent);
+
     --background1: #08002c;
     --background2: #33095b;
     --radius: 0.625rem;
@@ -121,6 +127,14 @@
     --sidebar-accent-foreground: #ededed;
     --sidebar-border: oklch(1 0 0 / 15%);
     --sidebar-ring: #ffbf35;
+}
+
+@utility shadow-glow-card {
+  box-shadow: var(--glow-project-card);
+}
+
+@utility shadow-glow-crescent {
+  box-shadow: var(--glow-crescent);
 }
 
 @layer base {

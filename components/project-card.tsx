@@ -18,10 +18,10 @@ export function ProjectCard({ project, isSelected, onClick }: ProjectCardProps) 
     >
       <motion.div
         layoutId={`project-card-${project.id}`}
-        className={`relative rounded-lg overflow-hidden border transition-colors duration-300 ${
+        className={`relative rounded-lg overflow-hidden border transition-all duration-300 ${
           isSelected
             ? "opacity-0 pointer-events-none border-primary"
-            : "border-primary/40 hover:border-b-secondary hover:border-t-white hover:border-l-primary hover:border-r-primary"
+            : "border-primary/40 hover:border-b-secondary hover:border-t-white hover:border-l-primary hover:border-r-primary hover:shadow-glow-card"
         }`}
       >
         <div className="relative aspect-video w-full">
