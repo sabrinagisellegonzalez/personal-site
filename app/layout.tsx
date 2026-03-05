@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Kumbh_Sans, Montserrat, Castoro } from "next/font/google";
+import { Kumbh_Sans, Montserrat, Castoro, My_Soul } from "next/font/google";
 import "./globals.css";
 import StarField from "@/components/starfield"
 import { Navbar } from "@/components/navbar";
@@ -20,6 +20,12 @@ const castoro = Castoro({
   weight: "400",
 });
 
+const mySoul = My_Soul({
+  variable: "--font-my-soul",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Sabrina Giselle Gonzalez",
   description: "Portfolio of Sabrina Giselle Gonzalez",
@@ -33,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${kumbhSans.variable} ${montserrat.variable} ${castoro.variable} antialiased`}
+        className={`${kumbhSans.variable} ${montserrat.variable} ${castoro.variable} ${mySoul.variable} antialiased`}
       >
         <StarField />
         <Navbar />
