@@ -15,7 +15,7 @@ const buttonVariants = cva(
         outline:
           "border border-primary bg-transparent hover:text-primary",
         underline:
-          "border border-transparent border-b-primary hover:border-l-primary hover:border-b-secondary hover:border-r-primary hover:border-t-white active:scale-90 hover:text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-60%",
+          "border border-transparent border-b-primary hover:border-l-primary hover:border-b-secondary hover:border-r-primary hover:border-t-white active:scale-90 hover:text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-75%",
         bothline:
           "border border-transparent border-b-primary border-t-primary hover:text-primary active:scale-90",
         ghost:
