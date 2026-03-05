@@ -53,8 +53,8 @@ export function Navbar() {
                   <NavigationMenuLink asChild active={isActive}>
                     <Link
                       href={href}
-                      className={`group/link relative px-4 py-2 font-display uppercase text-lg! border-b transition-colors hover:bg-transparent ${
-                        isActive ? "border-primary" : "border-transparent hover:border-primary"
+                      className={`group/link relative px-4 py-2 font-display uppercase text-lg! border-b hover:rounded-lg! hover:bg-transparent active:bg-transparent focus:bg-transparent active:scale-90 transition-all ${
+                        isActive ? "border-primary rounded-lg!" : "border-transparent hover:border-primary rounded-none!"
                       }`}
                     >
                       {/* Default gradient */}
