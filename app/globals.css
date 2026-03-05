@@ -129,13 +129,8 @@
   body {
     @apply text-foreground;
     background: linear-gradient(to bottom, var(--background1), var(--background2));
-    height: 100vh;
-    height: 100dvh;
-    overflow: hidden;
-    }
-  .scroll-container {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
+    background-attachment: fixed;
+    min-height: 100vh;
     }
   html {
     @apply bg-background;
