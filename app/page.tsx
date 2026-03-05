@@ -11,7 +11,7 @@ export default function Home() {
           alt="Sabrina Giselle Gonzalez Logo"
           width={200}
           height={200}
-          className="mb-8 w-32 h-32 md:w-64 h-64"
+          className="mb-8 w-36 h-36 md:w-64 md:h-64"
         />
         <h1 className="text-5xl font-display bg-clip-text text-transparent bg-linear-to-b from-white via-primary to-secondary to-86% uppercase tracking-tight text-center">
           Sabrina Giselle Gonzalez
