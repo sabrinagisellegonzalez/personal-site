@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Kumbh_Sans, Montserrat, Castoro } from "next/font/google";
 import "./globals.css";
-import StarField from "@/components/starfield";
+import StarField from "@/components/starfield"
+import { Navbar } from "@/components/navbar";
 
 const kumbhSans = Kumbh_Sans({
   variable: "--font-kumbh-sans",
@@ -35,8 +36,9 @@ export default function RootLayout({
         className={`${kumbhSans.variable} ${montserrat.variable} ${castoro.variable} antialiased`}
       >
         <StarField />
-        <div className="z-10 ">
-        {children}
+        <Navbar />
+        <div className="z-10">
+          {children}
         </div>
       </body>
     </html>
