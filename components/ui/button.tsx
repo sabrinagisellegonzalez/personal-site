@@ -15,9 +15,9 @@ const buttonVariants = cva(
         outline:
           "border border-primary bg-transparent hover:text-primary",
         underline:
-          "border border-transparent border-b-primary hover:border-primary",
+          "border border-transparent border-b-primary hover:border-l-primary hover:border-b-secondary hover:border-r-primary hover:border-t-white active:scale-90 hover:text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-60%",
         bothline:
-          "border border-transparent border-b-primary border-t-primary hover:text-primary",
+          "border border-transparent border-b-primary border-t-primary hover:text-primary active:scale-90",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
@@ -27,6 +27,7 @@ const buttonVariants = cva(
         xs: "h-6 gap-1 px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-8 gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 px-6 has-[>svg]:px-4",
+        xl: "h-14 px-10 has-[>svg]:px-6",
         icon: "size-9",
         "icon-xs": "size-6 [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",
