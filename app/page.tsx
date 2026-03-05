@@ -17,7 +17,7 @@ export default function Home() {
           Sabrina Giselle Gonzalez
         </h1>
         <p className="mt-6 text-lg text-center max-w-xl">
-          My portfolio is currently work in progress. Please check back in soon. In the meantime, connect with me on LinkedIn below.
+          My portfolio is currently a work in progress. Please check back in soon. In the meantime, connect with me on LinkedIn below.
         </p>
         <div className="flex flex-row gap-3 mt-8 justify-center items-center">
           <Button asChild variant="underline" size="lg" className="font-display uppercase text-xl pt-1">
