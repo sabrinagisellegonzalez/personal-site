@@ -9,7 +9,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { SggLogo } from "@/components/sgg-logo"
 
@@ -27,33 +26,54 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-linear-to-b from-black to-transparent">
       <div className="flex items-center justify-between px-6 py-4">
-        <div className="flex flex-row items-center gap-2">
-          <Link href="/" className="flex items-center">
-            <SggLogo className="h-12 sm:h-20 w-auto" />
-          </Link>
-          <div className="flex flex-col items-start justify-center">
-            <p className="text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-86% font-display uppercase tracking-tight text-sm sm:text-lg -mb-1 sm:-mb-1.5">
-              Sabrina
-            </p>
-            <p className="text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-86% font-display uppercase tracking-tight text-sm sm:text-lg -mb-1 sm:-mb-1.5">
-              Giselle
-            </p>
-            <p className="text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-86% font-display uppercase tracking-tight text-sm sm:text-lg">
-              Gonzalez
-            </p>
+        <Link href="/" className="flex items-center">
+          <div className="flex flex-row items-center gap-2">
+              <SggLogo className="h-12 sm:h-20 w-auto" />
+            <div className="flex flex-col items-start justify-center">
+              <p className="text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-86% font-display uppercase tracking-tight text-sm sm:text-lg -mb-1 sm:-mb-1.5">
+                Sabrina
+              </p>
+              <p className="text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-86% font-display uppercase tracking-tight text-sm sm:text-lg -mb-1 sm:-mb-1.5">
+                Giselle
+              </p>
+              <p className="text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-86% font-display uppercase tracking-tight text-sm sm:text-lg">
+                Gonzalez
+              </p>
+            </div>
           </div>
-        </div>
+        </Link>
 
         {/* Desktop nav */}
         <NavigationMenu className="hidden sm:flex">
           <NavigationMenuList>
-            {navLinks.map(({ label, href }) => (
-              <NavigationMenuItem key={href}>
-                <NavigationMenuLink asChild active={pathname === href} className={navigationMenuTriggerStyle()}>
-                  <Link href={href}>{label}</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
+            {navLinks.map(({ label, href }) => {
+              const isActive = pathname === href
+              return (
+                <NavigationMenuItem key={href}>
+                  <NavigationMenuLink asChild active={isActive}>
+                    <Link
+                      href={href}
+                      className={`group/link relative px-4 py-2 font-display uppercase text-lg! border-b transition-colors hover:bg-transparent ${
+                        isActive ? "border-primary" : "border-transparent hover:border-primary"
+                      }`}
+                    >
+                      {/* Default gradient */}
+                      <span className={`text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-70% transition-opacity duration-200 ${
+                        isActive ? "opacity-0" : "group-hover/link:opacity-0"
+                      }`}>
+                        {label}
+                      </span>
+                      {/* Active/hover gradient */}
+                      <span className={`absolute inset-0 flex items-center justify-center text-transparent bg-clip-text bg-linear-to-b from-white via-primary via-24% to-[#C164FF] to-60% transition-opacity duration-200 ${
+                        isActive ? "opacity-100" : "opacity-0 group-hover/link:opacity-100"
+                      }`}>
+                        {label}
+                      </span>
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              )
+            })}
           </NavigationMenuList>
         </NavigationMenu>
 

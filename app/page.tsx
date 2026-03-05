@@ -11,15 +11,15 @@ export default function Home() {
           alt="Sabrina Giselle Gonzalez Logo"
           width={200}
           height={200}
-          className="mb-8 w-36 h-36 md:w-64 md:h-64"
+          className="mb-8 w-36 h-36 md:w-64 md:h-64 starting:opacity-0 opacity-1000 duration-500 delay-300 transition-opacity"
         />
-        <h1 className="text-5xl font-display bg-clip-text text-transparent bg-linear-to-b from-white via-primary to-secondary to-86% uppercase tracking-tight text-center">
+        <h1 className="text-5xl font-display bg-clip-text text-transparent bg-linear-to-b from-white via-primary to-secondary to-86% uppercase tracking-tight text-center starting:opacity-0 opacity-1000 duration-500 delay-500 transition-opacity">
           Sabrina Giselle Gonzalez
         </h1>
-        <p className="mt-6 text-lg text-center max-w-xl">
+        <p className="mt-6 text-lg text-center max-w-xl starting:opacity-0 opacity-1000 duration-500 delay-700 transition-opacity">
           My portfolio is currently a work in progress. Please check back in soon. In the meantime, connect with me on LinkedIn below.
         </p>
-        <div className="flex flex-row gap-3 mt-8 justify-center items-center">
+        <div className="flex flex-row gap-3 mt-8 justify-center items-center starting:opacity-0 opacity-1000 duration-500 delay-[900ms] transition-opacity">
           <Button asChild variant="underline" size="lg" className="font-display uppercase text-xl pt-1">
             <Link href="https://www.linkedin.com/in/sabrina-giselle-gonzalez/" target="_blank" rel="noopener noreferrer">
               LinkedIn
