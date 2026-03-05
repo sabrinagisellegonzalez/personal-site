@@ -13,6 +13,7 @@ export default function Home() {
         {/* Hero */}
         <div className="flex flex-col items-center">
           <ProfileFlip />
+          <br />
           <TitleScatter />
           <p className="mt-6 text-lg text-center max-w-xl starting:opacity-0 opacity-1000 duration-500 delay-700 transition-opacity">
             {/* TODO: add intro */}

@@ -16,7 +16,7 @@ export function ProfileFlip() {
 
   return (
     <div
-      className="w-36 h-36 md:w-64 md:h-64 mb-8 starting:opacity-0 opacity-100 duration-500 delay-300 transition-opacity"
+      className="w-36 h-36 sm:w-64 sm:h-64 mb-8 starting:opacity-0 opacity-100 duration-500 delay-300 transition-opacity"
       style={{ perspective: "1200px" }}
     >
       <motion.div
