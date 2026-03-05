@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ProjectGallery } from "@/components/project-gallery";
 import { featuredProjects } from "@/lib/projects";
 import { ProfileFlip } from "@/components/profile-flip";
+import { TitleScatter } from "@/components/title-scatter";
 
 export default function Home() {
   return (
@@ -12,11 +13,9 @@ export default function Home() {
         {/* Hero */}
         <div className="flex flex-col items-center">
           <ProfileFlip />
-          <h1 className="text-5xl font-display bg-clip-text text-transparent bg-linear-to-b from-white via-primary to-secondary to-86% uppercase tracking-tight text-center starting:opacity-0 opacity-1000 duration-500 delay-500 transition-opacity">
-            Sabrina Giselle Gonzalez
-          </h1>
+          <TitleScatter />
           <p className="mt-6 text-lg text-center max-w-xl starting:opacity-0 opacity-1000 duration-500 delay-700 transition-opacity">
-            
+            {/* TODO: add intro */}
           </p>
           <div className="flex flex-row gap-3 mt-8 justify-center items-center starting:opacity-0 opacity-1000 duration-500 delay-[900ms] transition-opacity">
             <Button asChild variant="underline" size="lg" className="font-display uppercase text-xl pt-1">
