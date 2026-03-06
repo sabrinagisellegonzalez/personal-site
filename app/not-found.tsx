@@ -17,7 +17,7 @@ export default function NotFound() {
             Page not found
         </h1>
         <p className="mt-6 text-lg text-center max-w-xl starting:opacity-0 opacity-1000 duration-500 delay-700 transition-opacity">
-          Sorry, but this page does not exist yet, or you clicked a broken link. Please check back in soon.
+          Sorry, but this page is still being built, or you clicked a broken link. Please check back in soon.
         </p>
         <div className="flex flex-row gap-3 mt-8 justify-center items-center starting:opacity-0 opacity-1000 duration-500 delay-[900ms] transition-opacity">
           <Button asChild variant="underline" size="lg" className="font-display uppercase text-xl pt-1">
