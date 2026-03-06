@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react"
 import { motion } from "motion/react"
 import Image from "next/image"
+import { cn } from "@/lib/utils"
 
-export function ProfileFlip() {
+export function ProfileFlip({className}: {className?: string}) {
   const [rotation, setRotation] = useState(0)
 
   useEffect(() => {
@@ -16,7 +17,7 @@ export function ProfileFlip() {
 
   return (
     <div
-      className="w-36 h-36 sm:w-64 sm:h-64 mb-8 starting:opacity-0 opacity-100 duration-500 delay-300 transition-opacity"
+      className={cn("w-36 h-36 sm:w-64 sm:h-64 mb-8 starting:opacity-0 opacity-100 duration-500 delay-300 transition-opacity select-none", className)}
       style={{ perspective: "1200px" }}
     >
       <motion.div

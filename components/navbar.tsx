@@ -10,7 +10,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
-import { SggLogo } from "@/components/sgg-logo"
+import { SggLogo } from "@/components/branding/sgg-logo"
 
 const navLinks = [
   { label: "Resume", href: "/resume" },
