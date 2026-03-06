@@ -15,14 +15,15 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
 
   return (
     <LayoutGroup>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+      <div className="flex flex-wrap justify-center gap-6 w-full">
         {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            isSelected={selectedProject?.id === project.id}
-            onClick={() => setSelectedProject(project)}
-          />
+          <div key={project.id} className="w-full md:w-[calc(50%-12px)]">
+            <ProjectCard
+              project={project}
+              isSelected={selectedProject?.id === project.id}
+              onClick={() => setSelectedProject(project)}
+            />
+          </div>
         ))}
       </div>
 

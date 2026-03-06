@@ -34,7 +34,7 @@ export function ProjectCard({ project, isSelected, onClick }: ProjectCardProps) 
         </div>
 
         {/* desktop hover overlay */}
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex items-center justify-center px-4">
           <p className="font-display uppercase text-lg tracking-wider text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-86% text-center">
             {project.name}
           </p>
