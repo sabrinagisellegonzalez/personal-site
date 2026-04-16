@@ -16,7 +16,7 @@ const navLinks = [
   // { label: "Resume", href: "/resume" },
   { label: "Work", href: "/#featured-work" },
   // { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/#contact", highlightContact: true },
 ]
 
 export function Navbar() {
@@ -58,9 +58,15 @@ export function Navbar() {
         {/* Desktop nav */}
         <NavigationMenu className="hidden sm:flex">
           <NavigationMenuList>
-            {navLinks.map(({ label, href }) => {
+            {navLinks.map(({ label, href, highlightContact }) => {
               const isActive = pathname + hash === href
-              const handleClick = () => setHash(href.includes("#") ? `#${href.split("#")[1]}` : "")
+              const handleClick = () => {
+                const newHash = href.includes("#") ? `#${href.split("#")[1]}` : ""
+                setHash(newHash)
+                if (highlightContact) {
+                  window.dispatchEvent(new CustomEvent("highlight-contact"))
+                }
+              }
               return (
                 <NavigationMenuItem key={href}>
                   <NavigationMenuLink asChild active={isActive}>
@@ -108,11 +114,18 @@ export function Navbar() {
         }`}
       >
         <nav className="flex flex-col px-6 pb-4 gap-1">
-          {navLinks.map(({ label, href }) => (
+          {navLinks.map(({ label, href, highlightContact }) => (
             <Link
               key={href}
               href={href}
-              onClick={() => { setOpen(false); setHash(href.includes("#") ? `#${href.split("#")[1]}` : "") }}
+              onClick={() => {
+                setOpen(false)
+                const newHash = href.includes("#") ? `#${href.split("#")[1]}` : ""
+                setHash(newHash)
+                if (highlightContact) {
+                  window.dispatchEvent(new CustomEvent("highlight-contact"))
+                }
+              }}
               className={`px-4 font-display uppercase py-2 text-smfont-medium text-transparent bg-clip-text bg-linear-to-b transition-colors ${
                 pathname + hash === href ? "from-white via-primary via-24% to-[#C164FF] to-60%" : " from-white via-primary to-secondary to-70%"
               }`}

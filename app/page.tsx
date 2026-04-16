@@ -9,6 +9,7 @@ import { ExploreMoreArrows } from "@/components/custom/explore-more-arrows";
 import { ScrollToSection } from "@/components/custom/scroll-to-section";
 import { LinkedinIcon } from "@/components/icons/linkedin";
 import { InstagramIcon } from "@/components/icons/instagram";
+import { ContactSection } from "@/components/contact-section";
 
 export default function Home() {
   return (
@@ -28,18 +29,20 @@ export default function Home() {
           <p className="mt-3 sm:text-lg text-center max-w-xl starting:opacity-0 opacity-1000 duration-500 delay-[900ms] transition-opacity">
             {branding.aboutMe}
           </p>
-          <div className="flex flex-row gap-3 mt-8 justify-center items-center starting:opacity-0 opacity-1000 duration-500 delay-[1100ms] transition-opacity">
-            <Button asChild variant="leaf" size="xl_square" className="font-display uppercase text-xl">
-              <Link href={branding.linkedInUrl} target="_blank" rel="noopener noreferrer">
-                <LinkedinIcon size={30} />
-              </Link>
-            </Button>
-            <Button asChild variant="leaf" size="xl_square" className="font-display uppercase text-xl">
-              <Link href={branding.instagramUrl} target="_blank" rel="noopener noreferrer">
-                <InstagramIcon size={30} />
-              </Link>
-            </Button>
-          </div>
+          <ContactSection className="mt-8 starting:opacity-0 opacity-1000 duration-500 delay-[1100ms] transition-opacity">
+            <div className="flex flex-row gap-3 px-6 py-4 justify-center items-center">
+              <Button asChild variant="leaf" size="xl_square" className="font-display uppercase text-xl">
+                <Link href={branding.linkedInUrl} target="_blank" rel="noopener noreferrer">
+                  <LinkedinIcon size={30} />
+                </Link>
+              </Button>
+              <Button asChild variant="leaf" size="xl_square" className="font-display uppercase text-xl">
+                <Link href={branding.instagramUrl} target="_blank" rel="noopener noreferrer">
+                  <InstagramIcon size={30} />
+                </Link>
+              </Button>
+            </div>
+          </ContactSection>
           <ScrollToSection targetId="featured-work" className="starting:opacity-0 opacity-1000 duration-500 delay-[3100ms] transition-opacity">
             <ExploreMoreArrows className="mt-8" />
           </ScrollToSection>
