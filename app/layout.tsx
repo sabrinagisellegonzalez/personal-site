@@ -41,6 +41,7 @@ export default function RootLayout({
       <body
         className={`${kumbhSans.variable} ${montserrat.variable} ${castoro.variable} ${mySoul.variable} antialiased`}
       >
+        <div className="fixed inset-0 -z-10 bg-linear-to-b from-[#08002c] to-[#33095b]" />
         <StarField />
         <Navbar />
         <div className="z-10">
