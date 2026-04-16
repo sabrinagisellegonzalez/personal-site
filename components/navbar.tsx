@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
@@ -16,17 +16,29 @@ const navLinks = [
   // { label: "Resume", href: "/resume" },
   { label: "Work", href: "/#featured-work" },
   // { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/#contact" },
 ]
 
 export function Navbar() {
   const pathname = usePathname()
+  const [hash, setHash] = useState("")
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    const update = () => setHash(window.location.hash)
+    update()
+    window.addEventListener("hashchange", update)
+    window.addEventListener("popstate", update)
+    return () => {
+      window.removeEventListener("hashchange", update)
+      window.removeEventListener("popstate", update)
+    }
+  }, [])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-linear-to-b from-black to-transparent">
       <div className="flex items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center" onClick={() => setHash("")}>
           <div className="flex flex-row items-center gap-2">
               <SggLogo className="h-12 sm:h-20 w-auto" />
             <div className="flex flex-col items-start justify-center">
@@ -47,12 +59,14 @@ export function Navbar() {
         <NavigationMenu className="hidden sm:flex">
           <NavigationMenuList>
             {navLinks.map(({ label, href }) => {
-              const isActive = pathname === href
+              const isActive = pathname + hash === href
+              const handleClick = () => setHash(href.includes("#") ? `#${href.split("#")[1]}` : "")
               return (
                 <NavigationMenuItem key={href}>
                   <NavigationMenuLink asChild active={isActive}>
                     <Link
                       href={href}
+                      onClick={handleClick}
                       className={`group/link relative px-4 py-2 font-display uppercase text-lg! border-b hover:rounded-lg! hover:bg-transparent active:bg-transparent focus:bg-transparent active:scale-90 transition-all ${
                         isActive ? "border-primary rounded-lg!" : "border-transparent hover:border-primary rounded-none!"
                       }`}
@@ -98,9 +112,9 @@ export function Navbar() {
             <Link
               key={href}
               href={href}
-              onClick={() => setOpen(false)}
+              onClick={() => { setOpen(false); setHash(href.includes("#") ? `#${href.split("#")[1]}` : "") }}
               className={`px-4 font-display uppercase py-2 text-smfont-medium text-transparent bg-clip-text bg-linear-to-b transition-colors ${
-                pathname === href ? "from-white via-primary via-24% to-[#C164FF] to-60%" : " from-white via-primary to-secondary to-70%"
+                pathname + hash === href ? "from-white via-primary via-24% to-[#C164FF] to-60%" : " from-white via-primary to-secondary to-70%"
               }`}
             >
               {label}
