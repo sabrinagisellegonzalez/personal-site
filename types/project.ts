@@ -4,7 +4,7 @@ export type Project = {
   description: string
   completedMonth: number // 1–12
   completedYear: number
-  imageSrc: string
+  images: string[]       // first image is used as the thumbnail
   imageAlt?: string
 }
 

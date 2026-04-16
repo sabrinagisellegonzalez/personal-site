@@ -26,7 +26,7 @@ export function ProjectCard({ project, isSelected, onClick }: ProjectCardProps) 
       >
         <div className="relative aspect-video w-full">
           <Image
-            src={project.imageSrc}
+            src={project.images[0]}
             alt={project.imageAlt ?? project.name}
             fill
             className="object-cover"
