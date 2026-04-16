@@ -63,7 +63,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             >
               {/* Close button */}
               <button
-                className="absolute top-3 right-3 z-10 p-1.5 rounded-lg border border-primary/40 hover:border-primary text-primary/70 hover:text-primary transition-all duration-200 bg-card/80 backdrop-blur-sm cursor-pointer"
+                className="absolute top-3 right-3 z-30 p-1.5 rounded-lg border border-primary/40 hover:border-primary text-primary/70 hover:text-primary transition-all duration-200 bg-card/80 backdrop-blur-sm cursor-pointer"
                 onClick={onClose}
                 aria-label="Close"
               >
@@ -148,9 +148,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <motion.div
                 className="p-6 border-t border-primary"
                 initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 8 }}
-                transition={{ delay: 0.18, duration: 0.25 }}
+                animate={{ opacity: 1, y: 0, transition: { delay: 0.15, duration: 0.2 } }}
               >
                 <h2 className="text-2xl font-display uppercase tracking-tight text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-86%">
                   {project.name}

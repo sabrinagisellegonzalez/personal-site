@@ -20,7 +20,6 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
           <div key={project.id} className="w-full md:w-[calc(50%-12px)]">
             <ProjectCard
               project={project}
-              isSelected={selectedProject?.id === project.id}
               onClick={() => setSelectedProject(project)}
             />
           </div>
