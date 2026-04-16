@@ -6,15 +6,18 @@ import { Project } from "@/types/project"
 
 interface ProjectCardProps {
   project: Project
+  elevated?: boolean
+  onLayoutAnimationComplete?: () => void
   onClick: () => void
 }
 
-export function ProjectCard({ project, onClick }: ProjectCardProps) {
+export function ProjectCard({ project, elevated, onLayoutAnimationComplete, onClick }: ProjectCardProps) {
   return (
     <div className="group relative cursor-pointer" onClick={onClick}>
       <motion.div
         layoutId={`project-card-${project.id}`}
-        className="relative rounded-lg overflow-hidden border border-primary/40 hover:border-b-secondary hover:border-t-white hover:border-l-primary hover:border-r-primary hover:shadow-glow-card transition-all duration-300"
+        onLayoutAnimationComplete={onLayoutAnimationComplete}
+        className="relative rounded-lg overflow-hidden border border-primary/40 hover:border-b-secondary hover:border-t-white hover:border-l-primary hover:border-r-primary hover:shadow-glow-card transition-[border-color,box-shadow] duration-300"
       >
         <div className="relative aspect-video w-full">
           <Image
