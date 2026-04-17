@@ -16,6 +16,8 @@ const buttonVariants = cva(
           "border border-primary bg-transparent hover:text-primary",
         underline:
           "border border-transparent border-b-primary hover:border-l-primary active:border-l-primary hover:border-b-secondary active:border-b-secondary hover:border-r-primary active:border-r-primary hover:border-t-white active:border-t-white active:scale-90 hover:text-transparent active:text-transparent bg-clip-text bg-linear-to-b from-white via-primary to-secondary to-75%",
+        leaf:
+          "border border-primary rounded-br-lg rounded-tl-lg hover:border-l-primary active:border-l-primary hover:border-b-secondary active:border-b-secondary hover:border-r-primary active:border-r-primary hover:border-t-white active:border-t-white active:scale-90 hover:text-primary active:text-primary",
         bothline:
           "border border-transparent border-b-primary border-t-primary hover:text-primary active:scale-90",
         ghost:
@@ -28,6 +30,7 @@ const buttonVariants = cva(
         sm: "h-8 gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 px-6 has-[>svg]:px-4",
         xl: "h-14 px-10 has-[>svg]:px-6",
+        xl_square: "h-14 w-14 p-0 has-[>svg]:px-0",
         icon: "size-9",
         "icon-xs": "size-6 [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",
