@@ -12,6 +12,22 @@ import { Project } from "@/types/project"
 export const featuredProjects: Project[] = [
   {
     id: "project-1",
+    name: "Woyzeck",
+    description: "Costume shop work. Includes alterations and builds. Wardrobe crew during the production.",
+    completedMonth: 3,
+    completedYear: 2026,
+    images: [
+      "/projects/woyzeck-2026/wz0.jpg",
+      "/projects/woyzeck-2026/wz1.jpg",
+      "/projects/woyzeck-2026/wz2.jpg",
+      "/projects/woyzeck-2026/wz3.jpg",
+      "/projects/woyzeck-2026/wz4.jpg",
+      "/projects/woyzeck-2026/wz5.jpg",
+      "/projects/woyzeck-2026/wz6.jpg",
+    ]
+  },
+  {
+    id: "project-2",
     name: "The 25th Annual Putnam County Spelling Bee",
     description: "Costumes, Hair, and Makeup Designer.",
     completedMonth: 11,
@@ -58,7 +74,7 @@ export const featuredProjects: Project[] = [
     ],
   },
   {
-    id: "project-2",
+    id: "project-4",
     name: "Natasha Pierre and the Great Comet of 1812",
     description: "Assistant Props Designer.",
     completedMonth: 5,
