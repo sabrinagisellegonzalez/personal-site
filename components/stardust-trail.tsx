@@ -13,6 +13,7 @@ type Particle = {
   life: number
   size: number
   ci: number
+  burst?: boolean
 }
 
 const MAX = 600
@@ -86,6 +87,27 @@ export function StardustTrail() {
       }
     }
 
+    const burst = (x: number, y: number) => {
+      const N = 24
+      for (let i = 0; i < N; i++) {
+        if (particles.length >= MAX) particles.shift()
+        const a = (i / N) * Math.PI * 2 + Math.random() * 0.1
+        const sp = Math.random() * 3 + 2
+        particles.push({
+          x: x + (Math.random() - 0.5) * 4,
+          y: y + (Math.random() - 0.5) * 4,
+          vx: Math.cos(a) * sp,
+          vy: Math.sin(a) * sp,
+          life: 1,
+          size: Math.random() * 20 + 10,
+          ci: (Math.random() * COLORS.length) | 0,
+          burst: true,
+        })
+      }
+    }
+
+    const onDown = (e: PointerEvent) => burst(e.clientX, e.clientY)
+
     const onMove = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e
       if (!hasLast) {
@@ -107,10 +129,16 @@ export function StardustTrail() {
         const p = particles[i]
         p.x += p.vx
         p.y += p.vy
-        p.vx *= 0.95
-        // damp + gentle upward bias → evaporative drift
-        p.vy = p.vy * 0.95 - 0.015
-        p.life -= 0.009
+        if (p.burst) {
+          p.vx *= 0.9
+          p.vy *= 0.9
+          p.life -= 0.025
+        } else {
+          p.vx *= 0.95
+          // damp + gentle upward bias → evaporative drift
+          p.vy = p.vy * 0.95 - 0.015
+          p.life -= 0.009
+        }
         if (p.life <= 0) {
           particles.splice(i, 1)
           continue
@@ -127,10 +155,12 @@ export function StardustTrail() {
     animId = requestAnimationFrame(draw)
     window.addEventListener("resize", resize)
     window.addEventListener("pointermove", onMove)
+    window.addEventListener("pointerdown", onDown)
     return () => {
       cancelAnimationFrame(animId)
       window.removeEventListener("resize", resize)
       window.removeEventListener("pointermove", onMove)
+      window.removeEventListener("pointerdown", onDown)
     }
   }, [enabled])
 
