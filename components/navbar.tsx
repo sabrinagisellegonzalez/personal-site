@@ -13,10 +13,11 @@ import {
 import { SggLogo } from "@/components/branding/sgg-logo"
 
 const navLinks = [
-  // { label: "Resume", href: "/resume" },
-  { label: "Work", href: "/#featured-work" },
   // { label: "About", href: "/about" },
   { label: "Contact", href: "/#contact", highlightContact: true },
+  { label: "Work", href: "/#featured-work" },
+  // { label: "About", href: "/about" },
+  { label: "Resume", href: "/resume" },
 ]
 
 export function Navbar() {

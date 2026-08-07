@@ -140,7 +140,7 @@ export function StardustTrail() {
     <canvas
       ref={canvasRef}
       aria-hidden
-      className="fixed inset-0 w-full h-full pointer-events-none z-0"
+      className="fixed inset-0 w-full h-full pointer-events-none z-[100]"
       style={{ willChange: "transform" }}
     />
   )

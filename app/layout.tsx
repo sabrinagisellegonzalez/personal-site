@@ -46,9 +46,7 @@ export default function RootLayout({
         <StarField />
         <StardustTrail />
         <Navbar />
-        <div className="z-10">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

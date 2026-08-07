@@ -79,7 +79,7 @@ export default function StarField() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-none z-0 starting:opacity-0 opacity-100 duration-1000 delay-100 transition-opacity"
+      className="fixed inset-0 w-full h-full pointer-events-none -z-10 starting:opacity-0 opacity-100 duration-1000 delay-100 transition-opacity"
       style={{ willChange: "transform" }}
     />
   );
