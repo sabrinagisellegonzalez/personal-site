@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Kumbh_Sans, Montserrat, Castoro, My_Soul } from "next/font/google";
 import "./globals.css";
 import StarField from "@/components/starfield"
+import { StardustTrail } from "@/components/stardust-trail"
 import { Navbar } from "@/components/navbar";
 
 const kumbhSans = Kumbh_Sans({
@@ -43,6 +44,7 @@ export default function RootLayout({
       >
         <div className="fixed inset-0 -z-10 bg-linear-to-b from-[#08002c] to-[#33095b]" />
         <StarField />
+        <StardustTrail />
         <Navbar />
         <div className="z-10">
           {children}
