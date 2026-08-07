@@ -70,7 +70,7 @@ export function StardustTrail() {
 
     const spawn = (x: number, y: number, dx: number, dy: number) => {
       const dist = Math.hypot(dx, dy)
-      const count = Math.min(6, Math.floor(dist / 3) + 2)
+      const count = Math.min(3, Math.floor(dist / 6) + 2)
       for (let i = 0; i < count; i++) {
         if (particles.length >= MAX) particles.shift()
         const a = Math.random() * Math.PI * 2
@@ -135,9 +135,9 @@ export function StardustTrail() {
           p.life -= 0.025
         } else {
           p.vx *= 0.95
-          // damp + gentle upward bias → evaporative drift
+          // slightly accelerate downwards to simulate gravity
           p.vy = p.vy * 0.95 - 0.015
-          p.life -= 0.009
+          p.life -= 0.014
         }
         if (p.life <= 0) {
           particles.splice(i, 1)
