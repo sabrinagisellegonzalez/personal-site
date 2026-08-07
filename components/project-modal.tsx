@@ -47,7 +47,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 bg-black/70 z-40 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/70 z-50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -55,7 +55,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           />
 
           {/* Modal wrapper */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-6 pointer-events-none">
+          <div className="fixed inset-0 z-60 flex items-center justify-center p-6 pointer-events-none">
             <motion.div
               layoutId={`project-card-${project.id}`}
               className="relative bg-card border border-primary rounded-lg overflow-hidden max-w-4xl w-full pointer-events-auto shadow-lg shadow-primary/20"

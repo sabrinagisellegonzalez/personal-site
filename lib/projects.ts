@@ -12,9 +12,23 @@ import { Project } from "@/types/project"
 export const featuredProjects: Project[] = [
   {
     id: "project-1",
+    name: "Pippin",
+    description: "Costumes, Hair, and Makeup Designer.",
+    completedMonth: 3,
+    completedYear: 2026,
+    images: [
+      "/projects/pippin-2026/p1.jpeg",
+      "/projects/pippin-2026/p2.jpeg",
+      "/projects/pippin-2026/p3.jpeg",
+      "/projects/pippin-2026/p4.jpeg",
+      "/projects/pippin-2026/p5.jpeg",
+    ]
+  },
+  {
+    id: "project-2",
     name: "Woyzeck",
     description: "Costume shop work. Includes alterations and builds. Wardrobe crew during the production.",
-    completedMonth: 3,
+    completedMonth: 2,
     completedYear: 2026,
     images: [
       "/projects/woyzeck-2026/wz0.jpg",
@@ -27,7 +41,7 @@ export const featuredProjects: Project[] = [
     ]
   },
   {
-    id: "project-2",
+    id: "project-3",
     name: "The 25th Annual Putnam County Spelling Bee",
     description: "Costumes, Hair, and Makeup Designer.",
     completedMonth: 11,
@@ -54,7 +68,7 @@ export const featuredProjects: Project[] = [
     ],
   },
   {
-    id: "project-3",
+    id: "project-4",
     name: "Fright Night",
     description: "Assisted with alterations and distressing. Wardrobe Crew during show.",
     completedMonth: 10,
@@ -74,7 +88,7 @@ export const featuredProjects: Project[] = [
     ],
   },
   {
-    id: "project-4",
+    id: "project-5",
     name: "Natasha Pierre and the Great Comet of 1812",
     description: "Assistant Props Designer.",
     completedMonth: 5,
